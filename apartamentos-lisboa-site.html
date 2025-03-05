@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontre os Melhores Apartamentos em Lisboa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background-color: #0066cc;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+        }
+        .description {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0052a3;
+        }
+        .contact-page {
+            display: none;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Página Principal -->
+    <div class="main-page">
+        <header>
+            <h1>Encontre os Melhores Apartamentos em Lisboa</h1>
+        </header>
+
+        <nav>
+            <a href="#" onclick="showMainPage()">Início</a>
+            <a href="#" onclick="showContactPage()">Imobiliárias</a>
+        </nav>
+
+        <div class="container">
+            <div class="description">
+                <h2>Descubra seu Apartamento Perfeito em Lisboa</h2>
+                <p>Simplificamos sua busca por apartamentos na deslumbrante cidade de Lisboa. Conectamos potenciais compradores e inquilinos com as melhores opções de imóveis da cidade.</p>
+            </div>
+
+            <div class="form-section">
+                <h2>Receba Ofertas Exclusivas</h2>
+                <form id="lead-form">
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu Email" required>
+                    <input type="tel" name="telefone" placeholder="Seu Telefone">
+                    <button type="submit">Quero Receber Ofertas</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página de Contacto para Imobiliárias -->
+    <div class="contact-page container">
+        <header>
+            <h1>Imobiliárias: Compre Leads Exclusivos</h1>
+        </header>
+
+        <div class="form-section">
+            <h2>Cadastre sua Imobiliária</h2>
+            <form id="realtor-form">
+                <input type="text" name="nome_imobiliaria" placeholder="Nome da Imobiliária" required>
+                <input type="text" name="nome_contato" placeholder="Nome do Contato" required>
+                <input type="email" name="email_imobiliaria" placeholder="Email da Imobiliária" required>
+                <input type="tel" name="telefone_imobiliaria" placeholder="Telefone da Imobiliária" required>
+                <button type="submit">Quero Comprar Leads</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado! Você receberá nossas ofertas em breve.');
+        });
+
+        document.getElementById('realtor-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Recebemos seu cadastro. Nossa equipe entrará em contato.');
+        });
+
+        function showMainPage() {
+            document.querySelector('.main-page').style.display = 'block';
+            document.querySelector('.contact-page').style.display = 'none';
+        }
+
+        function showContactPage() {
+            document.querySelector('.main-page').style.display = 'none';
+            document.querySelector('.contact-page').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
